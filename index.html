@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Javascript MVC</title>
+
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+
+    <style>
+    .body{
+    	padding-top: 10px;
+    }
+    .inactive{
+        color: red;
+    }
+    </style>
+
+</head>
+
+
+<body>
+	<div class="container">
+	    <div class="js-container">
+
+	        <input type="text" class="js-student-input">
+	        <input type="button" class="js-add-student-btn" value="Add Student">
+
+	        <div class="js-student-container"></div>
+	        <!-- end tasks -->
+	        <input type="button" class="js-deactivate-student-btn" value="Deactivate Student">
+	        <input type="button" class="js-delete-student-btn" value="Delete Students">
+
+	    </div>
+    </div>
+    <!-- end js-container -->
+
+    <script src="public/js/StudentModel.js"></script>
+    <script src="public/js/StudentView.js"></script>
+    <script src="public/js/StudentController.js"></script>
+    <script >
+    	$(function () {
+	     var model = new StudentModel(),
+	         view = new StudentView(),
+	         controller = new StudentController(model, view);
+	 });
+    </script>
+
+</body>
+
+</html>
